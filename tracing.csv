@@ -1,0 +1,523 @@
+	i++	i--	i cond	if ()	counter.push	sampleArray	arraySquare	sum.push	minor.push	major.push						
+kata1	1		<=25													
+	1		true		1											
+	2		true		2											
+	...25		true		...25											
+	26		false		[1,...,25]											
+kata2		25	>0													
+		25	true		25											
+		24	true		24											
+		...1	true		...1											
+		0	false		[25,...,1]											
+kata3		-1	>=25													
+		-1	true		-1											
+		-2	true		-2											
+		...-25	true		...-25											
+		-26	false		[-1,...,-25]											
+kata4	-25		<0													
+	-25		true		-25											
+	-24		true		-24											
+	...-1		true		-1											
+	0		false		[-25,...,-1]											
+kata5		25	>=-25													
+		25	true		25											
+		24	true		24											
+		...-25	true		...-25											
+		-26	false		[25,...,-25]											
+kata6	1		<=100	i %3==0												
+	1		true	false												
+	2		true	false												
+	3		true	true	3											
+	4		true	false	3											
+	6		true	true	6											
+	8		true	false	6											
+	9		true	true	9											
+	...96		true	true	...96											
+	98		true	false	96											
+	99		true	true	99											
+	100		true	false	99											
+	101		false		[3,...,99]											
+kata7	1		<=100	i%7==0												
+	1		true	false												
+	2		true	false												
+	7		true	true	7											
+	13		true	false	7											
+	14		true	true	14											
+	...90		true	false	...84											
+	91		true	true	91											
+	97		true	false	91											
+	98		true	true	98											
+	99		true	false	98											
+	100		true	false	98											
+	101		false		[7,...,98]											
+kata8		100	>0	i %3||%7==0												
+		100	true	false												
+		99	true	true	99											
+		98	true	true	98											
+		97	true	false	98											
+		96	true	true	96											
+		90	true	false	96											
+		...14	true	true	14											
+		13	true	false	14											
+		12	true	true	12											
+		9	true	true	9											
+		7	true	true	7											
+		6	true	true	6											
+		5	true	false	6											
+		3	true	true	3											
+		1	true	false	3											
+		0	false		[99,...,3]											
+kata9	1		<=100	i %2!==0 && %5==0												
+	1		true	false												
+	2		true	false												
+	5		true	true	5											
+	6		true	false												
+	10		true	false												
+	15		true	true	15											
+	...90		true	false	...85											
+	95		true	true	95											
+	96		true	false												
+	100		true	false												
+	101		false		[5,...,95]											
+kata10	0		<sampleArray.length			[469,...,472,]										
+	0		true		469	469										
+	1		true		755	755										
+	2		true		244	244										
+	3		true		245	245										
+	...19		true		...472	...472										
+	20		false		[469,...,472,undefined]											
+kata11	0		<sampleArray.length	sampleArray[i]%2==0		[469,755,...,472,]										
+	0		true	false		469										
+	1		true	false		755										
+	2		true	true	244	244										
+	3		true	false	244	245										
+	4		true	true	758	758										
+	...18		true	true	940	940										
+	19		true	true	472	472										
+	20		false		[244,758,...,940,472]											
+kata12	0		<sampleArray.length	sampleArray[i]%2!==0		[469,755...,472,]										
+	0		true	true	469	469										
+	1		true	true	755	755										
+	2		true	false	755	244										
+	3		true	true	245	245										
+	4		true	false	245	758										
+	...17		true	true	535	535										
+	19		true	false	535	472										
+	20		false		[469,755,...,535]											
+kata13	0		<sampleArray.length	sampleArray[i]%8==0		[469,755...,472,]										
+	0		true	false		469										
+	1		true	false		755										
+	2		true	false		244										
+	3		true	false		245										
+	4		true	false		758										
+	...8		true	true	712	712										
+	9		true	false	712	71										
+	10		true	true	456	456										
+	...19		true	true	472	472										
+	21		false		[712, 456,...,472]											
+kata14	0		<sampleArray.length	sampleArray[i]>0		[469,755...,472,]										
+	0		true	true		469	219961									
+	1		true	true		755	570025									
+	2		true	true		244	59536									
+	3		true	true		245	60025									
+	4		true	true		758	574564									
+	...19		true	true		472	222784									
+	20		false				[219961,...,222784]									
+kata15	1		<=20													
+	1		true					1								
+	2		true					3								
+	3		true					6								
+	...18		true					...171								
+	19		true					190								
+	20		true					210								
+	21		false					210								
+kata16	0		<sampleArray.length			[469,755...,472,]										
+	0		true			469		469								
+	1		true			755		1224								
+	2		true			244		1468								
+	3		true			245		1713								
+	...18		true			940		...8621								
+	19		true			472		9093								
+	20		false					9093								
+kata17	0		<sampleArray.length	sampleArray[i]<minor		[469,755...,472,]										
+	0		true	true		469			469							
+	1		true	false		755			469							
+	2		true	true		244			244							
+	3		true	false		245			244							
+	...7		true	true		17			...17							
+	...19		true	false		472			17							
+	20		false						17							
+kata18	0		<sampleArray.length	sampleArray[i]>major		[469,755...,472,]										
+	0		true	true		469				469						
+	1		true	true		755				755						
+	2		true	false		244				755						
+	3		true	false		245				755						
+	...18		true	true		940				...940						
+	...19		true	false		472				940						
+	20		false							940						
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
